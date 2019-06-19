@@ -7,3 +7,13 @@ backend:
 publish_mode: editorial_workflow
 
 media_folder: images
+
+collections:
+  - label: 'Pages'
+    name: 'Pages'
+    files:
+    - label: 'Index'
+      name: 'Home'
+      file: 'index.html'
+      fields:
+        - { label: Title, name: title, widget: string }
