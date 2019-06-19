@@ -1,0 +1,20 @@
+add to src folder
+  pug
+  styles
+  js
+build from src folder
+  also admin
+
+use heroku for auth backend
+  custom domain
+
+make push on github build
+  static frontend -> github pages
+
+add github social preview image
+add favicon
+
+see if we can merge
+https://github.com/vencax/netlify-cms-github-oauth-provider
+with https://github.com/fspoettel/netlify-cms-oauth-provider
+ourselves to create something proper and "secure"

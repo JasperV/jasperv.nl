@@ -1,0 +1,33 @@
+# Dependencies
+/node_modules
+
+# IDEs and editors
+.idea/*
+!.idea/runConfigurations/
+!.idea/codeStyleSettings.xml
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+xcuserdata/
+*.sublime-workspace
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+
+# Misc
+npm-debug.log
+yarn-error.log
+*.env
+
+# System Files
+.DS_Store
+Thumbs.db
