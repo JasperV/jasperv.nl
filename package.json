@@ -8,11 +8,10 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@11ty/eleventy": "0.8.3",
-    "static-server": "2.2.1"
+    "@11ty/eleventy": "0.8.3"
   },
   "scripts": {
-    "start": "static-server",
+    "start": "eleventy --serve",
     "build": "eleventy",
     "watch": "eleventy --watch",
     "debug": "DEBUG=* eleventy",
