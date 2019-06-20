@@ -2,7 +2,7 @@ backend:
   name: github
   repo: JasperV/jasperv.github.io
   branch: master
-  base_url: https://jasperv-netlify-github-oauth.herokuapp.com/
+  base_url: https://netlify-github-oauth.jasperv.nl/
 publish_mode: editorial_workflow
 media_folder: images
 site_url: https://jasperv.nl
