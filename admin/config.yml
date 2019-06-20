@@ -12,7 +12,7 @@ collections:
     name: 'Pages'
     files:
     - label: 'Index'
-      name: 'Home'
+      name: 'Index'
       file: 'pages/index.json'
       fields:
         - { label: Title, name: title, widget: string }
