@@ -13,6 +13,6 @@ collections:
     files:
     - label: 'Index'
       name: 'Index'
-      file: 'pages/index.md'
+      file: 'pages/index.json'
       fields:
         - { label: Title, name: title, widget: string }

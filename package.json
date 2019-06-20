@@ -14,7 +14,7 @@
     "start": "eleventy --serve",
     "build": "eleventy",
     "watch": "eleventy --watch",
-    "debug": "DEBUG=* eleventy",
+    "debug": "DEBUG=Eleventy* eleventy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,9 +26,9 @@
     "email": "1297464+JasperV@users.noreply.github.com",
     "url": "https://jasperv.nl"
   },
-  "license": "ISC",
+  "license": "BlueOak-1.0.0",
   "bugs": {
     "url": "https://github.com/JasperV/jasperv.github.io/issues"
   },
-  "homepage": "https://github.com/JasperV/jasperv.github.io#readme"
+  "homepage": "https://jasperv.nl/"
 }

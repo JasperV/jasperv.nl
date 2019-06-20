@@ -32,3 +32,5 @@ merge static site with oauth provider
 
 create heroku pipeline?
   to allow for localhost access as well when developing?
+
+https://github.com/koljakutschera/laststaticsitegenerator
