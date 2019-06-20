@@ -1,6 +1,6 @@
 add to src folder
   pug
-  styles
+  stylus
   js
 build from src folder
   also admin
@@ -10,13 +10,13 @@ make logo look nice
 
 go through all netlify options
 
+make netlify npm dependency
+  build admin from src as well
+
 build to github pages branch
   use master as source
     does this work with github or does it require travis?
   does not work for user or org repo, so make that configurable
-
-make push on github build
-  static frontend -> github pages
 
 add github social preview image
 add favicon
