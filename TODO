@@ -6,8 +6,14 @@ build from src folder
   also admin
   pwa etc...
 
-use heroku for auth backend
-  custom domain
+make logo look nice
+
+go through all netlify options
+
+build to github pages branch
+  use master as source
+    does this work with github or does it require travis?
+  does not work for user or org repo, so make that configurable
 
 make push on github build
   static frontend -> github pages
@@ -19,3 +25,10 @@ see if we can merge
 https://github.com/vencax/netlify-cms-github-oauth-provider
 with https://github.com/fspoettel/netlify-cms-oauth-provider
 ourselves to create something proper and "secure"
+
+merge static site with oauth provider
+  to create self contained app per website
+  also use in github template repo
+
+create heroku pipeline?
+  to allow for localhost access as well when developing?
