@@ -3,11 +3,10 @@ backend:
   repo: JasperV/jasperv.github.io
   branch: master
   base_url: https://jasperv-netlify-github-oauth.herokuapp.com/
-
 publish_mode: editorial_workflow
-
 media_folder: images
-
+site_url: https://jasperv.nl
+logo_url: https://jasperv.nl/img/logo.svg
 collections:
   - label: 'Pages'
     name: 'Pages'
