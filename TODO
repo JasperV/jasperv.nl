@@ -1,3 +1,7 @@
+remove editorconfig gitignore etc
+  these are not required for single person small projects
+  already defined a layer higher
+
 add to src folder
   pug
   stylus
