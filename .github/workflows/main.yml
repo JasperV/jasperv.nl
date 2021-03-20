@@ -1,0 +1,36 @@
+name: Lighthouse compare to Production
+on:
+  push:
+    branches:
+      - !master
+jobs:
+  main:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.4
+
+      - name: Wait for Vercel
+        uses: mskelton/wait-for-vercel-action@v1.2.0
+        id: wait-for-vercel
+        with:
+          token: ${{ secrets.VERCEL_TOKEN }}
+
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@v7
+        id: audit-with-lighthouse
+        with:
+          urls: |
+            https://jasperv.nl
+            ${{ steps.wait-for-vercel.outputs.url }}
+          temporaryPublicStorage: true
+
+      - name: Commit Comment
+        uses: peter-evans/commit-comment@v1.3.2
+        with:
+          body: |
+            ### Reports
+            ```json
+            ${{ steps.audit-with-lighthouse.outputs.links }}
+            ```

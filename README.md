@@ -1,2 +1,3 @@
-# jasperv.github.io
-[🔖 jasperv.nl](https://jasperv.nl)
+# JasperV.NL
+
+https://jasperv.nl

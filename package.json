@@ -1,34 +1,48 @@
 {
-  "name": "jasperv.github.io",
-  "version": "1.0.0",
+  "name": "jasperv.nl",
+  "version": "2.0.0",
   "description": "🔖 jasperv.nl",
-  "main": "index.js",
-  "engines": {
-    "node": "12"
-  },
-  "dependencies": {},
+  "main": "public/index.html",
   "devDependencies": {
-    "@11ty/eleventy": "0.9.0"
+    "check-dependencies": "1.1.0",
+    "chokidar-cli": "2.1.0",
+    "cpy-cli": "3.1.1",
+    "del-cli": "3.0.1",
+    "fixpack": "4.0.0",
+    "html-minifier-terser": "5.1.1",
+    "html-validator-cli": "7.0.1",
+    "mkdirp": "1.0.4",
+    "npm-check": "5.9.2",
+    "npm-run-all": "4.1.5",
+    "pug-cli": "1.0.0-alpha6",
+    "serve": "11.3.2",
+    "sharp": "0.27.2"
   },
+  "keywords": [
+    "jasperv.nl"
+  ],
   "scripts": {
-    "start": "eleventy --serve",
-    "build": "eleventy",
-    "watch": "eleventy --watch",
-    "debug": "DEBUG=Eleventy* eleventy",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm-run-all clean dirs copy --parallel src",
+    "check": "npm-check -uE",
+    "clean": "del ./public",
+    "copy": "cpy ./src/*.* !./src/image.jpg !./src/*.pug ./public",
+    "depend": "check-dependencies",
+    "dirs": "mkdirp ./public",
+    "fix": "fixpack",
+    "minify": "html-minifier-terser ./public/index.html -o ./public/index.html --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --minify-css true --minify-js true",
+    "pug": "run-p pug:*",
+    "pug:html": "pug ./src/index.pug -o ./public -P -O '{\"branch\": \"'$(node -e 'console.log(process.env.VERCEL_GITHUB_COMMIT_REF)')'\", \"version\": \"'$npm_package_version'\"}'",
+    "pug:icon": "pug ./src/icon.pug -o ./public -E svg -O '{\"branch\": \"'$(node -e 'console.log(process.env.VERCEL_GITHUB_COMMIT_REF)')'\"}'",
+    "refresh": "rm -rf node_modules && rm package-lock.json && npm install",
+    "serve": "serve ./public",
+    "src": "npm-run-all pug:html --parallel pug:icon minify validate",
+    "start": "export VERCEL_GITHUB_COMMIT_REF=$(git branch --show-current) && npm-run-all build --parallel watch serve",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "update": "run-s fix depend check",
+    "validate": "html-validator --file=./public/index.html --verbose",
+    "watch": "chokidar \"src/*.pug\" -c \"npm run pug\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JasperV/jasperv.github.io.git"
-  },
-  "author": {
-    "name": "JasperV",
-    "email": "1297464+JasperV@users.noreply.github.com",
-    "url": "https://jasperv.nl"
-  },
-  "license": "BlueOak-1.0.0",
-  "bugs": {
-    "url": "https://github.com/JasperV/jasperv.github.io/issues"
-  },
+  "private": true,
+  "repository": "JasperV/jasperv.nl",
   "homepage": "https://jasperv.nl/"
 }
