@@ -35,7 +35,7 @@
     "pug:icon": "pug ./src/icon.pug -o ./public -E svg -O '{\"branch\": \"'$(node -e 'console.log(process.env.VERCEL_GITHUB_COMMIT_REF)')'\"}'",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm install",
     "serve": "serve ./public",
-    "src": "npm-run-all pug:html --parallel pug:icon minify validate",
+    "src": "npm-run-all pug:html --parallel pug:icon minify",
     "start": "export VERCEL_GITHUB_COMMIT_REF=$(git branch --show-current) && npm-run-all build --parallel watch serve",
     "test": "echo \"Error: no test specified\" && exit 1",
     "update": "run-s fix depend check",
