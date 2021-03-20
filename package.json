@@ -1,6 +1,6 @@
 {
   "name": "jasperv.nl",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "🔖 jasperv.nl",
   "main": "public/index.html",
   "devDependencies": {
